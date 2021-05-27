@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codility.directreplynotification">
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>-->
+
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+
+    <!--<uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>--> <!--retrieve unredacted Exif metadata from photos-->
+
+    <uses-feature android:name="android.hardware.telephony"
+        android:required="true"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+
+    <application
+        android:name="com.codility.Story.app.StoryApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.codility.Story.screens.StoryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".MyNotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <!--<activity android:name="com.codility.Story.screens.StoryActivity"
+            android:screenOrientation="portrait"/>-->
+
+        <activity android:name="com.codility.call_record.CallRecordFirstActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="com.codility.call_record.SetupActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <receiver android:name="com.codility.call_record.CallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name="com.codility.call_record.ControlRecordingReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="net.synapticweb.callrecorder.START_RECORDING" />
+                <action android:name="net.synapticweb.callrecorder.STOP_SPEAKER" />
+                <action android:name="net.synapticweb.callrecorder.START_SPEAKER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.codility.call_record.RecorderService"/>
+    </application>
+
+</manifest>

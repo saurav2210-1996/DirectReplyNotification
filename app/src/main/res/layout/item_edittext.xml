@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/editText"
+    android:focusableInTouchMode="false">
+
+</EditText>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:id="@+id/llRoot"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/cardview_dark_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <!--<View
+            android:layout_width="@dimen/dim_1"
+            android:layout_height="@dimen/dim_1" />
+-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSocialMediaPrefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_dark_background"
+            android:visibility="gone"
+            tools:text="https://linkedin.com/in/" />
+
+        <AutoCompleteTextView
+            android:id="@+id/actSocialMedia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:completionThreshold="0"
+            />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_weight="1"
+
+            android:padding="5dp"
+            android:imeOptions="actionDone"
+            android:inputType="textVisiblePassword"
+            android:singleLine="true"
+            android:visibility="visible"
+            android:focusableInTouchMode="false"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

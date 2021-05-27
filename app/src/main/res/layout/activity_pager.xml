@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager"/>
+
+    <!--<com.codility.custom_view.MyViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager"/>-->
+
+    <!--<com.codility.custom_view.CustomViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager"/>-->
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:background="@drawable/circle_shape"
+        android:max="50"
+        android:progress="0"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

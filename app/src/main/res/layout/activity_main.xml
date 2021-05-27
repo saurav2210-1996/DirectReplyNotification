@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:riv="http://schemas.android.com/apk/res-auto"
+    tools:context="com.codility.directreplynotification.MainActivity"
+    android:keepScreenOn="true">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/applicant_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tvHeader"
+        android:background="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:padding="10dp"
+        android:text="@string/app_info"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:id="@+id/tvDes"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tvDes">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sender Name"
+            android:id="@+id/etSenderName"
+            android:text="saurav"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sender Id"
+            android:id="@+id/etSenderId"
+            android:text="1"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_background"
+        android:onClick="showNotificationView"
+        android:text="@string/show_notification"
+        android:textColor="@android:color/white"
+        tools:ignore="OnClick" />
+
+    <com.codility.custom_view.RatioImageView
+        android:id="@+id/image1"
+        riv:adjustWidth="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

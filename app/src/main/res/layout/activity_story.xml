@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.codility.Story.customview.FixedViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etCompanyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionGo"
+        android:inputType="textCapWords|textVisiblePassword"
+        android:importantForAutofill="no"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        android:visibility="gone"/>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        android:visibility="gone"/>
+
+    <com.codility.custom_view.CustomNonSwipeableViewPager
+        android:id="@+id/swipePager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/storyDisplayVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:surface_type="texture_view"
+        app:resize_mode="fixed_width"
+        android:visibility="gone"/>
+
+    <cn.jzvd.JzvdStd
+        android:id="@+id/jz_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"/>
+
+</FrameLayout>

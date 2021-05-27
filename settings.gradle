@@ -1,0 +1,9 @@
+include ':varuas'
+include ':app'
+
+/*
+gradle.ext.exoplayerRoot = '/Users/jaydeep/Desktop/Saurav/ExoPlayer'
+gradle.ext.exoplayerModulePrefix = 'ExoPlayer-'
+apply from: new File(
+        gradle.ext.exoplayerRoot, 'core_settings.gradle')
+*/
